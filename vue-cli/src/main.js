@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Header from './components/ejOneComponents/Header.vue'
-import ServerDetails from './components/ejOneComponents/ServerDetails.vue'
+import Server from './components/ejOneComponents/server/Server.vue'
+import ServerDetails from './components/ejOneComponents/server/ServerDetails.vue'
 import ServerManage from './components/ejOneComponents/ServerManage.vue'
 import User from './components/ejTwoComInteract/User.vue'
 
 
 Vue.component("app-header", Header);
+Vue.component("app-server", Server);
 Vue.component("app-server-details", ServerDetails);
 Vue.component("app-server-manage", ServerManage);
 Vue.component("User", User);

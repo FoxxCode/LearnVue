@@ -1,12 +1,15 @@
 <template>
   <div class="container">
-    <!-- <app-header></app-header>
+    <app-header></app-header>
     <hr>
-    <app-server-details></app-server-details>
+    <div class="row">
+      <app-server></app-server>
+      <app-server-details></app-server-details>
+    </div>
     <hr>
-    <app-server-manage></app-server-manage> -->
+    <app-server-manage></app-server-manage>
 
-    <User></User>
+    <!-- <User></User> -->
   </div>
 
 </template>
