@@ -7,9 +7,9 @@
         <div>
             <h1>Server Details</h1>
             <br>
-            <p>Server ID: {{}}</p>
+            <p>Server ID: {{currentID}}</p>
             <br>
-            <p>Server STATUS: {{}}</p>
+            <p>Server STATUS: {{currentstatus}}</p>
             <br>
             <button>Levantar server</button>
         </div>
@@ -18,8 +18,35 @@
 </template>
 
 <script>
+
+import { eventBus } from '../../../main';
+
 export default {
-    
+    data: function(){
+        return {
+            currentID:0,
+            currentstatus:"normal"
+        }
+    },
+    created:function(){
+            eventBus.$on("triggerDetalle", function(servId, servStatus){//ES5
+                   this.currentID=servId;
+                   this.currentstatus=servStatus;
+            });
+    }
+    // methods:{
+    //     receivedDetalle: function(){
+    //         // eventBus.$on("triggerDetalle", function(servId, servStatus){//ES5
+    //         //     this.currentID=servId;
+    //         //     this.currentstatus=servStatus;
+    //         // });
+
+    //         eventBus.$on("triggerDetalle", (servId, servStatus) => {
+    //              this.currentID=servId;
+    //              this.currentstatus=servStatus;
+    //         })
+    //     }
+    // }
 }
 </script>
 

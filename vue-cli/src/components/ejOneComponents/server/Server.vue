@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <button> Detalles de server</button>
+                        <button @click="triggerDetalle(server.id, server.status)"> Detalles de server</button>
                     </div>
                 </div>
                 
@@ -41,8 +41,12 @@ export default {
         };
     },
     methods:{
-        detalleServer: function(){
-            
+        triggerDetalle: function(servId, servStatus){
+            // this.currentID=servId;
+            // this.currentstatus=servStatus;
+            eventBus.$emit("detalleTriggered", servId, servStatus);
+
+            //console.log(servId +" - "+ servStatus);
         }
     }
 }
