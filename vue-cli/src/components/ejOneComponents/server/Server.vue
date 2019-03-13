@@ -44,7 +44,7 @@ export default {
         triggerDetalle: function(servId, servStatus){
             // this.currentID=servId;
             // this.currentstatus=servStatus;
-            eventBus.$emit("detalleTriggered", servId, servStatus);
+            eventBus.$emit("detalleTriggered", {"Id":servId, "Status":servStatus});
 
             //console.log(servId +" - "+ servStatus);
         }
