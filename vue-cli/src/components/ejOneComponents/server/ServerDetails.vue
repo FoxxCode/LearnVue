@@ -7,11 +7,11 @@
         <div>
             <h1>Server Details</h1>
             <br>
-            <p>Server ID: {{serv.id}}</p>
+            <p>Server ID: {{servId}}</p>
             <br>
-            <p>Server STATUS: {{serv.status}}</p>
+            <p>Server STATUS: {{servStatus}}</p>
             <br>
-            <button>Levantar server</button>
+            <button @click="levantarServer">Levantar server</button>
         </div>
     </div>
          
@@ -26,36 +26,31 @@ export default {
         return {
             // currentID:0,
             // currentstatus:"normal",
-            serv:null
+            servId:0,
+            servStatus:""
         }
     },
-    created:function(){
-            eventBus.$on("detalleTriggered", function(objServer){//ES5
-                    this.serv=objServer.Id;
-                    this.serv=objServer.Status;
-            });
-    }
     // created:function(){
-    //         eventBus.$on("triggerDetalle", (arrServer) => {
-    //             this.currentID=arrServer[0];
-    //             this.currentstatus=arrServer[1];
-    //         });
-
-    //         console.log(this.currentID+ "-" + this.currentstatus);
+    //     eventBus.$on("detalleTriggered", function(objServer){//ES5
+    //             this.servId=objServer.Id;
+    //             this.servStatus=objServer.Status
+    //             console.log(this.servId,this.servStatus);
+    //     });
     // }
-    // methods:{
-    //     receivedDetalle: function(){
-    //         // eventBus.$on("triggerDetalle", function(servId, servStatus){//ES5
-    //         //     this.currentID=servId;
-    //         //     this.currentstatus=servStatus;
-    //         // });
+    created(){
+        eventBus.$on("detalleTriggered", (objServer) => {
+            this.servId=objServer.Id;
+            this.servStatus=objServer.Status
+            // console.log(this.servId,this.servStatus);
+        });
+    },
 
-    //         eventBus.$on("triggerDetalle", (servId, servStatus) => {
-    //              this.currentID=servId;
-    //              this.currentstatus=servStatus;
-    //         })
-    //     }
-    // }
+    methods:{
+        levantarServer(){
+            this.servStatus="up";
+            eventBus.$emit("serverShutted", this.servStatus);
+        }
+    }
 }
 </script>
 

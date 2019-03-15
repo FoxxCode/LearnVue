@@ -38,6 +38,7 @@ export default {
                 {id:4, status: "error"},
                 {id:5, status: "up"}
             ]
+            //servStat=""
         };
     },
     methods:{
@@ -48,6 +49,9 @@ export default {
 
             //console.log(servId +" - "+ servStatus);
         }
+    },
+    created(){
+        eventBus.$on("serverShutted", (servStatus) => console.log(servStatus));
     }
 }
 </script>
