@@ -1,10 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-
-            </div>
-        </div>
+        <slot></slot>
     </div>
 </template>
 
@@ -14,6 +10,13 @@ export default {
     
 }
 </script>
+
+<style>
+    .card-body {
+        font-family: 'Homemade Apple', cursive;
+    }
+</style>
+
 
 
 
