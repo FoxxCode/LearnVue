@@ -11,7 +11,13 @@
 
     <!-- <User></User> -->
 
-    <Quotes></Quotes>
+    <!-- <Quotes></Quotes> -->
+
+    <hr>
+
+    <h1>Routing</h1>
+    <br>
+    <router-view></router-view>
   </div>
 
 </template>
