@@ -6,6 +6,9 @@
 </template>
 
 <script>
+
+  import axios from "axios";
+
   import Header from './components/header/header.vue'
   export default {
     name: 'app',

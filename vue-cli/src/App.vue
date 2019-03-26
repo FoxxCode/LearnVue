@@ -17,12 +17,21 @@
 
     <h1>Routing</h1>
     <br>
+    <app-header></app-header>
+    <br>
     <router-view></router-view>
   </div>
 
 </template>
 
 <script>
+  import Header from "./components/routerExercise/Header.vue";
+
+  export default{
+    components:{
+      appHeader:Header
+    }
+  }
 </script>
 
 <style>
